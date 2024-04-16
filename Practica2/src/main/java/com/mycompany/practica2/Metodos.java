@@ -13,12 +13,26 @@ import java.io.*;
  */
 public class Metodos {
 
-    Scanner sc = new Scanner(System.in);
-    File archivo = new File("Practica.txt");
+    Scanner sc;
+    File archivo;
+
+    public Metodos() {
+        this.sc = new Scanner(System.in);
+        this.archivo = new File("Practica.txt");
+    }
+
+    public File getArchivo() {
+        return archivo;
+    }
+
+    public void setArchivo(String otro) {
+        this.archivo = new File(otro);
+    }
 
     public int menu() {
         System.out.println("Escribir archivo [1]");
         System.out.println("Leer archivo [2]");
+        System.out.println("Escribir otro [3]");
         System.out.println("Salir [0]");
         return sc.nextInt();
     }
@@ -44,13 +58,38 @@ public class Metodos {
             _dir = sc.nextLine();
             escribir = new FileWriter(archivo, true);
             linea = new PrintWriter(escribir);
-            linea.println(_nombre+"\n"+_correo+"\n"+_dir);
+            linea.println(_nombre + "\n" + _correo + "\n" + _dir);
             linea.close();
         } catch (Exception e) {
         }
     }
-    public void leer(){
-    
+
+    public void leer() {
+        FileReader leer;
+        BufferedReader almacenamiento;
+        String cadena = "", nombre = "", correo = "", dir = "";
+        try {
+            leer = new FileReader(archivo);
+            almacenamiento = new BufferedReader(leer);
+            while (cadena != null) {
+                try {
+                    cadena = almacenamiento.readLine();
+                    nombre = cadena;
+                    cadena = almacenamiento.readLine();
+                    correo = cadena;
+                    cadena = almacenamiento.readLine();
+                    dir = cadena;
+                    if(cadena!=null){
+                        System.out.println("Nombre: "+nombre+"\nCorreo: "
+                        +correo+"\nDireccion: "+dir+"\n");
+                    }
+                } catch (Exception e) {
+                }
+            }
+            almacenamiento.close();
+            leer.close();
+        } catch (Exception e) {
+        }
     }
 
 }

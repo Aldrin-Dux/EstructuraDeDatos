@@ -29,6 +29,7 @@ public class Metodos {
         System.out.println("Buscar sec...             [4]");
         System.out.println("Eliminar                  [5]");
         System.out.println("Insertar                  [6]");
+        System.out.println("Burbujear mayor           [7]");
         System.out.println("Salir                     [0]");
         return sc.nextInt();
     }
@@ -37,10 +38,10 @@ public class Metodos {
         for (int i = 0; i < myArray.length; i++) {
             System.out.println("Intertar elemento de posicion " + (i + 1));
             myArray[i] = sc.nextInt();
-            if (i>0) {
+            if (i > 0) {
                 if (myArray[i] == myArray[i - 1]) {
-                 System.out.println("Numero repetido");
-                 i--;
+                    System.out.println("Numero repetido");
+                    i--;
                 }
             }
         }
@@ -66,11 +67,11 @@ public class Metodos {
     }
 
     public void presentar() {
-        for(int i =0; i<ev; i++){
-            if(i>0){
-                if(myArray[i]<myArray[i-1]){
-                    myArray[i-1]=myArray[i];
-                    myArray[i]=myArray[i-1];
+        for (int i = 0; i < ev; i++) {
+            if (i > 0) {
+                if (myArray[i] < myArray[i - 1]) {
+                    myArray[i - 1] = myArray[i];
+                    myArray[i] = myArray[i - 1];
                     i--;
                 }
             }
@@ -110,6 +111,32 @@ public class Metodos {
             ev++;
         } else {
             System.out.println("Arreglo lleno...");
+        }
+    }
+
+    public void burbuja1() {
+        int aux;
+        for (int i = 0; i < ev - 1; i++) {
+            for (int j = 0; j < ev - 1; j++) {
+                if (myArray[j] > myArray[j + 1]) {
+                    aux = myArray[j];
+                    myArray[j] = myArray[j + 1];
+                    myArray[j + 1] = aux;
+                }
+            }
+        }
+    }
+
+    public void burbuja2() {
+        int aux;
+        for (int i = 0; i < ev - 1; i++) {
+            for (int j = i +1; j < ev; j++) {
+                if (myArray[i] > myArray[j]) {
+                    aux = myArray[i];
+                    myArray[i] = myArray[j];
+                    myArray[j] = aux;
+                }
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ public class Arreglos01 {
 
     public static void main(String[] args) {
         Metodos obj = new Metodos();
-        int opc, num,pos;
+        int opc, num, pos;
         do {
             opc = obj.menu();
             switch (opc) {
@@ -43,8 +43,11 @@ public class Arreglos01 {
                     System.out.println("Numero a insertar");
                     num = obj.sc.nextInt();
                     System.out.println("Posicion?");
-                    pos=obj.sc.nextInt();
-                    obj.insertar(num,pos);
+                    pos = obj.sc.nextInt();
+                    obj.insertar(num, pos);
+                    break;
+                case 7:
+                    obj.burbuja2();
                     break;
                 default:
                     break;

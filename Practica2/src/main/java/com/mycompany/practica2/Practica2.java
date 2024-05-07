@@ -19,14 +19,13 @@ public class Practica2 {
                 case 1:
                     obj.escribir();
                     break;
-                case 3:
-                    obj.setArchivo("otraPractica.txt");
-                    obj.escribir();
-                    break;
                 case 2:
                     obj.leer();
                     break;
-                default: break;
+                case 3:
+                    obj.otroArchivo("otraPractica.txt");
+                    obj.escribir();
+
             }
         } while (opcion != 0);
     }

@@ -21,18 +21,14 @@ public class Metodos {
         this.archivo = new File("Practica.txt");
     }
 
-    public File getArchivo() {
-        return archivo;
-    }
-
-    public void setArchivo(String otro) {
-        this.archivo = new File(otro);
+    public File otroArchivo(String otro) {
+        return this.archivo = new File(otro);
     }
 
     public int menu() {
         System.out.println("Escribir archivo [1]");
         System.out.println("Leer archivo [2]");
-        System.out.println("Escribir otro [3]");
+        System.out.println("Ingresar un nuevo archivo [3]");
         System.out.println("Salir [0]");
         return sc.nextInt();
     }
@@ -41,6 +37,7 @@ public class Metodos {
         FileWriter escribir;
         PrintWriter linea;
         String _nombre = "", _correo = "", _dir = "";
+
         if (!archivo.exists()) {
             try {
                 archivo.createNewFile();
@@ -77,11 +74,10 @@ public class Metodos {
                     nombre = cadena;
                     cadena = almacenamiento.readLine();
                     correo = cadena;
-                    cadena = almacenamiento.readLine();
                     dir = cadena;
-                    if(cadena!=null){
-                        System.out.println("Nombre: "+nombre+"\nCorreo: "
-                        +correo+"\nDireccion: "+dir+"\n");
+                    if (cadena != null) {
+                        System.out.printf("Nombre: %s\nCorreo: %s\nDireccion: %s\n",
+                                nombre, correo, dir);
                     }
                 } catch (Exception e) {
                 }
@@ -89,6 +85,7 @@ public class Metodos {
             almacenamiento.close();
             leer.close();
         } catch (Exception e) {
+
         }
     }
 

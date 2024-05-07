@@ -1,0 +1,14 @@
+Cedula: 1105251746
+Nombres y apellidos: Kevin Anthony Robles Camacho
+Fecha de nacimiento: 17 de enero 2006
+Estatura: 170,00cm
+Peso: 70,00kg
+Alergias: Ninguna
+
+Cedula: 1106752583
+Nombres y apellidos: Aldrin Josue Perez Sornoza
+Fecha de nacimiento: 16 de abril 2004
+Estatura: 175,00cm
+Peso: 80,00kg
+Alergias: Crema de mani
+

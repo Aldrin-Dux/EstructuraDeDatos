@@ -1,13 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package proyecto2b;
-
-/**
- *
- * @author utpl
- */
 public class Nodo {
-    
+    Alumnos estudiante;
+    Nodo sig;
+
+    public Nodo(int id, String nombre, char sexo, float[] notas) {
+        this.estudiante  = new Alumnos(id,nombre,sexo,notas);
+        this.sig = null;
+    }
 }

@@ -1,13 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package proyecto2b;
+public class Alumnos extends Persona {
 
-/**
- *
- * @author utpl
- */
-public class Alumnos {
-    
+    float[] notas;
+
+    public Alumnos(int id, String nombre, char sexo, float[] notas) {
+        super(id, nombre, sexo);
+        this.notas = notas;
+    }
+
+    public float getPromedio() {
+        float sum = 0;
+        for (float nota : notas) {
+            sum += nota;
+
+        }
+        return (sum / 3);
+
+    }
+
 }
